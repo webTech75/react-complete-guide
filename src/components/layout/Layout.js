@@ -1,10 +1,11 @@
 import React from 'react';
 import Hoc from '../../hoc/Hoc';
 import './Layout.css';
+import Toolbar from '../navigation/toolbar/Toolbar';
 
 export const Layout = (props) => (
    <Hoc>
-      <div>toolbalr, SoidDrower, Backdrop</div>
+      <Toolbar />
       <main className='content'>
          {props.children}
       </main>
