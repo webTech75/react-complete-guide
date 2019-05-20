@@ -4,6 +4,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';//helper fun to inject the store into react component
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
+import thunk  from 'redux-thunk';
 
 import './index.css';
 import App from './App';
@@ -26,7 +27,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
    rootReducer,
-   composeEnhancers(applyMiddleware(logger)),
+   composeEnhancers(applyMiddleware(logger, thunk)),
 );
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

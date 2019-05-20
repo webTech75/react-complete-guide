@@ -1,43 +1,57 @@
+// eslint-disable-next-line react/no-typos
 import * as  action from './actions';
 
-export const increment = () => {
+const increment = () => {
    return {
       type: action.INCREMENT
 
    }
 }
 
-export const decrement = () => {
+const decrement = () => {
    return {
       type: action.DECREMENT
 
    }
 }
 
-export const add5 = (value) => {
+const add5 = (value) => {
    return {
       type: action.ADD_5,
       value
    }
 }
 
-export const subtract5 = (value) => {
+const subtract5 = (value) => {
    return {
       type: action.SUBRTACT_5,
       value
    }
 }
 
-export const storeResult = (result) => {
+const storeResult = (result) => {
    return {
       type: action.STORE_RESULT,
       result
    }
 }
 
-export const deleteResult = (id) => {
+const deleteResult = (id) => dispatch => {
+   setTimeout(() => dispatch(delayResult(id)), 3000);
+}
+
+function delayResult(id) {
    return {
       type: action.DELETE_RESULT,
       id
    }
+}
+
+export {
+   increment,
+   decrement,
+   add5,
+   subtract5,
+   storeResult,
+   deleteResult
 }

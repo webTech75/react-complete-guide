@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/no-typos
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const ADD_5 = 'ADD_5';
